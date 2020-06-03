@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      body {
+        background-color: black;
+      }
+      h1 {
+        color: white;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 5em;
+        vertical-align: middle;
+        text-align: center;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1 id="text"></h1>
+    
+    <script>
+      var now = new Date(); 
+      var utc = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+      var fullDaysSinceEpoch = Math.floor(utc/8.64e7);
+      document.getElementById("text").innerHTML =
+          (fullDaysSinceEpoch % 2 == 0 ? "Alice's Turn" : "Bob's Turn");
+    </script>
+    
+    <noscript>This page needs Javascript to work!</noscript>
+  </body>
+
+</html>
